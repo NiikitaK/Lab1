@@ -1,6 +1,5 @@
 package com.company.factory;
 
-import com.company.model.BuildHistory;
 import com.company.model.DeployHistory;
 
 import java.util.Date;
