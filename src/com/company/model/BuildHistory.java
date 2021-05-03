@@ -38,11 +38,11 @@ public class BuildHistory extends History {
     @Override
     public String toString() {
         return "BuildHistory{" +
-                "id" + super.getId() +
-                "date" + super.getDate() +
-                "user" + super.getUser() +
-                "result" + super.getResult() +
-                "buildName=" + buildName +
+                "id='" + super.getId() + '\'' +
+                ", date='" + super.getDate() + '\'' +
+                ", user='" + super.getUser() + '\'' +
+                ", result='" + super.getResult() + '\'' +
+                ", buildName=" + buildName +
                 ", artifactType='" + artifactType + '\'' +
                 '}';
     }

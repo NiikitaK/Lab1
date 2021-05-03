@@ -2,7 +2,7 @@ package com.company.model;
 
 import java.util.Objects;
 
-public class DeployHistory extends History{
+public class DeployHistory extends History {
     private String deployName;
     private String platformType;
     private String platformVersion;
@@ -47,11 +47,11 @@ public class DeployHistory extends History{
     @Override
     public String toString() {
         return "DeployHistory{" +
-                "id" + super.getId() +
-                "date" + super.getDate() +
-                "user" + super.getUser() +
-                "result" + super.getResult() +
-                "deployName='" + deployName + '\'' +
+                "id='" + super.getId() + '\'' +
+                ", date='" + super.getDate() + '\'' +
+                ", user='" + super.getUser() + '\'' +
+                ", result='" + super.getResult() + '\'' +
+                ", deployName='" + deployName + '\'' +
                 ", platformType='" + platformType + '\'' +
                 ", platformVersion='" + platformVersion + '\'' +
                 '}';

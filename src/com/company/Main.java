@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.controller.Controller;
+import com.company.exception.HistoryNotFoundException;
 import com.company.factory.BuildHistoryFactory;
 import com.company.factory.DeployHistoryFactory;
 import com.company.model.BuildHistory;
@@ -11,10 +13,6 @@ import java.util.Date;
 import java.util.List;
 
 public class Main {
-    int id = 1;
-    String date = "20.05";
-    String act = "interview";
-
     public static void main(String[] args) {
         BuildHistory buildHistory = new BuildHistory();
         buildHistory.setId(0);
@@ -35,7 +33,7 @@ public class Main {
         deployHistory.setPlatformVersion("T-1000");
         System.out.println(deployHistory);
 
-        List<History> histories=new ArrayList<>();
+        List<History> histories = new ArrayList<>();
         histories.add(buildHistory);
         histories.add(deployHistory);
         System.out.println(histories);
@@ -61,5 +59,15 @@ public class Main {
         histories.add(deployHistory1);
         System.out.println(histories);
         System.out.println(histories.size());
+
+        Controller.getInstance().create(buildHistory);
+        Controller.getInstance().create(deployHistory);
+
+        System.out.println(Controller.getInstance().getAll());
+        try {
+            Controller.getInstance().remove(10);
+        } catch (HistoryNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
